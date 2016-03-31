@@ -1,0 +1,38 @@
+package search;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class navigation {
+
+	public static void main(String[] args) throws AWTException {
+		
+		// TODO Auto-generated method stub
+		WebDriver driver = new FirefoxDriver();
+		driver.navigate().to("http://testingpool.com");
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		// Working
+		
+//		alignleft wp-image-2855
+		WebElement sqlIcon = driver.findElement(By.className("alignleft.wp-image-2855"));
+		sqlIcon.click();
+		
+		
+		
+		
+		
+		
+	}
+
+}
