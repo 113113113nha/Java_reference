@@ -1,0 +1,25 @@
+package search;
+
+public class stringWork {
+
+	public static void main(String[] args) {
+
+		// char[] to string
+		char[] helloArray = { 'h', 'e', 'l', 'l', 'o', '.' };
+		System.out.println(helloArray.length);
+		
+		String helloString = new String(helloArray);
+		System.out.println(helloString);
+
+		// String length
+		String palindrome = "  1 3 5 7#9  ";
+		int len = palindrome.length();
+		
+		System.out.println("String Length is : " + len);
+		System.out.println("Hashcode is : " + palindrome.hashCode());
+		System.out.println("Trim is : " + palindrome.trim());
+		System.out.println("Trim.length is : " + palindrome.trim().length());
+
+	}
+
+}
