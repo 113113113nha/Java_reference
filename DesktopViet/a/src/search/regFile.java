@@ -1,36 +1,45 @@
 package search;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import org.apache.commons.io.IOUtils;
+
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
-
 public class regFile {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-		//
-		String currentDir = System.getProperty("user.dir");
-		System.out.println("Current dir using System:" +currentDir);
-		File inputFile = new File(currentDir + "/a/regex_normail.txt");
-//		File inputFile = new File("text_regex.txt");
+        // Read file Normal
+        String currentDir = System.getProperty("user.dir");
+        System.out.println("Current dir using System:" + currentDir);
+        File inputFile = new File(currentDir + "/a/regex_normail.txt");
 
+        InputStream inputStream = new FileInputStream(inputFile);
+        String fileString = IOUtils.toString(inputStream);
+        System.out.println(fileString);
+        System.out.println(fileString.length());
 
-		InputStream inputStream = new FileInputStream(inputFile);
-		String fileString = IOUtils.toString(inputStream);
-		System.out.println(fileString);
-		System.out.println(fileString.length());
-		
-		int countConsonat = 0;
-		Pattern patternConsonant = Pattern.compile("([a-zA-Z&&[^aAoOiIuUeE]])");
-		Matcher matcherConsonant = patternConsonant.matcher(fileString);
-		while (matcherConsonant.find()) {
-			countConsonat++;
-		}
-		System.out.println(countConsonat);
-	}
+        int countConsonat = 0;
+//        Pattern patternConsonant = Pattern.compile("([a-zA-Z&&[^aAoOiIuUeE]])"); //consonant
+//        Pattern patternConsonant = Pattern.compile("([\\s\\S])"); // All character with whitespace
+//        Pattern patternConsonant = Pattern.compile("([\\S])"); // All character without whitespace
+
+        Pattern patternConsonant = Pattern.compile("([\\w])"); // Word
+
+        Matcher matcherConsonant = patternConsonant.matcher(fileString);
+        while (matcherConsonant.find()) {
+            countConsonat++;
+        }
+        System.out.println(countConsonat);
+
+        // Read file Unicode
+        File inputUFile = new File(currentDir + "/a/text_regex.txt");
+        System.out.println(inputUFile.getAbsolutePath());
+        Reader in = new InputStreamReader(new FileInputStream(currentDir + "/a/text_regex.txt"), "UTF-16");
+        String str = IOUtils.toString(in);
+        in.close();
+        System.out.println(str);
+
+    }
 }
