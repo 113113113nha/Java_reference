@@ -1,0 +1,27 @@
+package search;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ODBCConnUtils {
+
+	public static Connection getJdbcOdbcConnection() throws SQLException, ClassNotFoundException {
+		String odbcDataSourceName = "simplehr-ds";
+		String userName = "simplehr";
+		String password = "simplehr";
+		return getJdbcOdbcConnection(odbcDataSourceName, userName, password);
+	}
+
+	public static Connection getJdbcOdbcConnection(String odbcDataSourceName, String userName, String password)
+			throws SQLException, ClassNotFoundException {
+
+//		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+
+		// Syntax URL Connection of JDBC-ODBC
+		String connectionURL = "jdbc:odbc:" + odbcDataSourceName;
+
+		Connection conn = DriverManager.getConnection(connectionURL, userName, password);
+		return conn;
+	}
+}

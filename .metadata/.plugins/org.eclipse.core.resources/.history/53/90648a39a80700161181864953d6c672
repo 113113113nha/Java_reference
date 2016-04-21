@@ -1,0 +1,23 @@
+package search;
+
+import java.sql.Connection;
+
+public class MySQLConnUtils {
+
+	public static Connection getMySQLConnection(){
+		
+		String hostName = "localhost";
+	    String dbName = "mytest";
+	    String userName = "root";
+	    String passWord = "12345";
+		
+		return getMySQLConnection(hostName, dbName, userName, passWord);
+	}
+	
+	public static Connection getMySQLConnection(String hostName, String dbName, String userName, String passWord) {
+		
+		return "";
+	}
+	
+	
+}
