@@ -1,0 +1,33 @@
+package search;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class newconnect {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DB db = new DB();
+        db.dbConnect("jdbc:jtds:sqlserver://localhost:1433/testmydb;instance=SQLEXPRESS","sa","arisvnserver");
+    
+	}
+
+}
+
+class DB
+{
+    public DB() {}
+
+    public void dbConnect(String db_connect_string, String db_userid, String db_password)
+    {
+        try
+        {
+            Connection conn = DriverManager.getConnection(connectionURL, userName, passWord);
+            System.out.println("connected");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+};

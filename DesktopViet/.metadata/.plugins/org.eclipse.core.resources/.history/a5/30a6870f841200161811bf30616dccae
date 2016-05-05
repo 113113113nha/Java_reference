@@ -1,0 +1,42 @@
+package search;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestDBconnection {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		// Get connection
+		Connection connection = ConnectionUtils.getMyConnection();
+		
+		// Create statement
+		Statement statement = connection.createStatement();
+		
+		String query = "SELECT * FROM DanhsachHS";
+		
+		// Execute SQL statement -> REsultset
+		ResultSet result = statement.executeQuery(query);
+		
+		int id;
+		String no;
+		String name;
+		while(result.next()) {
+			id = result.getInt(1);
+			no = result.getString(2);
+			name = result.getString("Name");
+			
+			System.out.println("--------------------");
+            System.out.println("id:" + id);
+            System.out.println("no:" + no);
+            System.out.println("name:" + name);
+        }
+		
+		// Close connection
+		connection.close();
+					
+		}
+	
+
+}

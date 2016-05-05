@@ -1,0 +1,15 @@
+package search;
+
+import java.sql.Connection;
+
+public class TestDBconnection {
+
+	public static void main(String[] args) {
+		// Get connection
+		Connection connection = ConnectionUtils.getMyConnection();
+		
+	
+
+	}
+
+}

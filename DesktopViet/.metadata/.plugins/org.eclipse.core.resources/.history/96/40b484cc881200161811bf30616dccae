@@ -1,0 +1,33 @@
+package search;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class newconnect {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DB db = new DB();
+        db.dbConnect("jdbc:sqlserver://{computer-name}\\SQLEXPRESS:1433;databaseName=abc;integratedSecurity=true;","sa","password");
+    
+	}
+
+}
+
+class DB
+{
+    public DB() {}
+
+    public void dbConnect(String db_connect_string, String db_userid, String db_password)
+    {
+        try
+        {
+            Connection conn = DriverManager.getConnection(db_connect_string, db_userid, db_password);
+            System.out.println("connected");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+};

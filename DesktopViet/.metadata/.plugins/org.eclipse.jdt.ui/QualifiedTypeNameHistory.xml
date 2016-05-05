@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.net.URLEncoder"/>
-<fullyQualifiedTypeName name="java.net.URLDecoder"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.ParserConfigurationException"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
@@ -55,4 +53,11 @@
 <fullyQualifiedTypeName name="org.cyberneko.html.HTMLElements.Element"/>
 <fullyQualifiedTypeName name="javax.lang.model.util.Elements"/>
 <fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="search.SQLServerConnUtils_JTDS"/>
+<fullyQualifiedTypeName name="search.ConnectionUtils"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="search.SQLServerConnUtils_SQLJDBC"/>
+<fullyQualifiedTypeName name="connectdb.ConnectionUtils"/>
 </qualifiedTypeNameHistroy>

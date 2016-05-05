@@ -1,0 +1,28 @@
+package search;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class newconnect {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		DB db = new DB();
+        db.dbConnect("jdbc:jtds:sqlserver://localhost:1433/testmydb;instance=SQLEXPRESS","sa","arisvnserver");
+    
+	}
+
+}
+
+class DB
+{
+    public DB() {}
+
+    public void dbConnect(String db_connect_string, String db_userid, String db_password) throws SQLException
+    {
+
+            Connection conn = DriverManager.getConnection(db_connect_string, db_userid, db_password);
+            System.out.println("connected");
+    }
+};

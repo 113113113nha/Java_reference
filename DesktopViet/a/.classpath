@@ -79,5 +79,8 @@
 	<classpathentry kind="lib" path="lib/xstream-1.4.8.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_65"/>
 	<classpathentry kind="lib" path="lib/system-2.1.jar"/>
+	<classpathentry kind="lib" path="dbdriver/jtds-1.3.1.jar"/>
+	<classpathentry kind="lib" path="dbdriver/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="dbdriver/sqljdbc4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
